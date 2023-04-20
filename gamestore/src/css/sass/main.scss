@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@import 'layout/dashboard.scss';
+
+@import 'layout/gamecard.scss';
+
+@import 'layout/gameshop.scss';
