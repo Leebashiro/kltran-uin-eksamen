@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import Dashboard from "./Dashboard"
 
 export default function Layout({ games }) {
-  
   return (
     <div id="container">
       <header>
@@ -10,7 +9,7 @@ export default function Layout({ games }) {
       </header>
 
       <main>
-        <Outlet />
+        <Outlet games={games}/>
       </main>
 
       <section>
