@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Dashboard from "./Dashboard"
 
-export default function Layout({ games }) {
+export default function Layout() {
   return (
     <div id="container">
       <header>
@@ -9,14 +9,16 @@ export default function Layout({ games }) {
       </header>
 
       <main>
-        <Outlet games={games}/>
+        <Outlet/>
       </main>
 
       <section>
         
       </section>
 
-      <footer></footer>
+      <footer>
+        
+      </footer>
     </div>
   );
 }

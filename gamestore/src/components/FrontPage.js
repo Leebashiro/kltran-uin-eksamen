@@ -15,6 +15,7 @@ export default function FrontPage({ games, fetchLatestGames }) {
             name={game.name}
             background_image={game.background_image}
             gameId={game.id}
+            slug={game.slug}
           />
         ))}
         <Link to="/gameshop" onClick={fetchLatestGames}>

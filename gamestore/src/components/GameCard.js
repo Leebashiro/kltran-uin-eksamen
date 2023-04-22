@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function GameCard({ name, background_image, gameId }) {
+export default function GameCard({ name, background_image, gameId, slug }) {
   const [stores, setStores] = useState([]);
 
   useEffect(() => {
@@ -16,8 +17,10 @@ export default function GameCard({ name, background_image, gameId }) {
 
   return (
     <article className="gameCard">
-      <img src={background_image} alt={`${name} background`} />
-      <h3>{name}</h3>
+      <Link to={`/games/${slug}`}>
+        <img src={background_image} alt={`${name} background`} />
+        <h3>{name}</h3>
+      </Link>
       <div className="gameCard_stores">
         {stores.map((store) => (
           <a

@@ -1,20 +1,13 @@
-import GameCard from "./GameCard";
+import { useParams } from "react-router-dom";
+import GameDetails from "./GameDetails";
 
-export default function GamePage({games}) {
-    return (
-        <>
-        {games?.map((game) => (
-            <GameCard 
-              key={game.id} 
-              name={game.name} 
-              background_image={game.background_image} 
-              slug={game.slug}
-              api_id={game.api_id}
-              playtime={game.playtime}
-              genres={game.genres}
-              is_favorite={game.is_favorite}
-            />
-          ))}
-          </>
-    )
+export default function GamePage({ games }) {
+  const { slug } = useParams();
+  const game = games.find((game) => game.slug === slug);
+
+  return (
+    <>
+      <GameDetails game={game} />
+    </>
+  );
 }

@@ -4,6 +4,7 @@ import './css/main.css'
 import { Route, Routes } from "react-router-dom";
 import GameShop from "./components/GameShop";
 import FrontPage from "./components/FrontPage";
+import GamePage from "./components/GamePage";
 
 function App() {
   const [games, setGames] = useState([]);
@@ -25,6 +26,7 @@ function App() {
       <Route element={<Layout games={games} />}>
         <Route index element={<FrontPage games={games} />} />
         <Route path="/gameshop" element={<GameShop games={games} />} />
+        <Route path="/games/:slug" element={<GamePage games={games} /> } />
       </Route>
     </Routes>
   );
