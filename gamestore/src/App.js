@@ -28,11 +28,13 @@ function App() {
         return detailsData;
       })
     );
-
+    /*Har brukt promise.all her som jeg gjorde tidligere i arbeidskrav 4 om moviesearch*/
     const gamesDataWithDetails = gamesData.results.map((game, index) => ({
       ...game,
       description: gamesDetails[index].description_raw,
       shop: gamesDetails[index].stores,
+    /*Fikk fra stackoverflow, hvordan man merger to arrays, 
+    https://stackoverflow.com/questions/55607431/how-to-merge-two-array-of-objects-with-reactjs*/
     }));
 
     setGames(gamesDataWithDetails);
