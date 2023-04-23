@@ -4,10 +4,10 @@ import Dashboard from "./Dashboard"
 export default function Layout() {
   return (
     <div id="container">
-      <header>
+      <nav>
         <Dashboard />
-      </header>
-
+      </nav>
+    
       <main>
         <Outlet/>
       </main>

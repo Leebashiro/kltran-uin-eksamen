@@ -16,7 +16,7 @@ export default function Dashboard() {
             <Link to="/mygames">MyGames</Link>
           </li>
           <li>
-            <Link to="/favourites">Favourites</Link>
+            <Link to="/myfavourites">Favourites</Link>
           </li>
         </ul>
       </div>

@@ -5,12 +5,14 @@ import { Route, Routes } from "react-router-dom";
 import GameShop from "./components/GameShop";
 import FrontPage from "./components/FrontPage";
 import GamePage from "./components/GamePage";
+import MyFavourites from "./components/MyFavourites";
 
 function App() {
   const [games, setGames] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   const fetchGameData = async () => {
-    const gameIds = [1234, 5678, 7891];
+    const gameIds = [1837, 324, 1239, 1091, 2598, 1198, 2299, 197, 14, 702];
 
     const gamesResponse = await fetch(
       `https://api.rawg.io/api/games?ids=${gameIds.join()}&key=6971e514cb3f4acaaac0d86b97575afb`
@@ -36,16 +38,27 @@ function App() {
     setGames(gamesDataWithDetails);
   };
 
+  
+  /*Handlevognfunksjonalitet*/
+  function addToFavourites (game) {
+    console.log(game.id + "Added to Favourites")
+    setFavourites((prev) => [...prev, game]);
+  };
+
+  console.log(favourites)
+  
+
   useEffect(() => {
     fetchGameData();
   }, []);
 
   return (
     <Routes>
-      <Route element={<Layout games={games} />}>
+      <Route element={<Layout games={games} setFavourites={setFavourites}/>}>
         <Route index element={<FrontPage games={games} />} />
         <Route path="/gameshop" element={<GameShop games={games} />} />
-        <Route path="/games/:slug" element={<GamePage games={games} />} />
+        <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites}  />} />
+        <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>
   );
