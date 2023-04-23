@@ -9,16 +9,35 @@ import GamePage from "./components/GamePage";
 function App() {
   const [games, setGames] = useState([]);
 
-  const fetchData = async () => {
-    const response = await fetch(`
-      https://api.rawg.io/api/games?key=6971e514cb3f4acaaac0d86b97575afb&dates=2019-09-01,2019-09-30&ordering=-released&page_size=3
-    `);
-    const data = await response.json();
-    setGames(data.results);
+  const fetchGameData = async () => {
+    const gameIds = [1234, 5678, 7891];
+
+    const gamesResponse = await fetch(
+      `https://api.rawg.io/api/games?ids=${gameIds.join()}&key=6971e514cb3f4acaaac0d86b97575afb`
+    );
+    const gamesData = await gamesResponse.json();
+
+    const gamesDetails = await Promise.all(
+      gamesData.results.map(async (game) => {
+        const detailsResponse = await fetch(
+          `https://api.rawg.io/api/games/${game.id}?key=6971e514cb3f4acaaac0d86b97575afb`
+        );
+        const detailsData = await detailsResponse.json();
+        return detailsData;
+      })
+    );
+
+    const gamesDataWithDetails = gamesData.results.map((game, index) => ({
+      ...game,
+      description: gamesDetails[index].description_raw,
+      shop: gamesDetails[index].stores,
+    }));
+
+    setGames(gamesDataWithDetails);
   };
 
-  useEffect (() => {
-    fetchData();
+  useEffect(() => {
+    fetchGameData();
   }, []);
 
   return (
@@ -26,7 +45,7 @@ function App() {
       <Route element={<Layout games={games} />}>
         <Route index element={<FrontPage games={games} />} />
         <Route path="/gameshop" element={<GameShop games={games} />} />
-        <Route path="/games/:slug" element={<GamePage games={games} /> } />
+        <Route path="/games/:slug" element={<GamePage games={games} />} />
       </Route>
     </Routes>
   );
