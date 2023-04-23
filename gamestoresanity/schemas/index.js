@@ -1,1 +1,4 @@
-export const schemaTypes = []
+import mygames from './mygames'
+
+export const schemaTypes = [mygames]
+
