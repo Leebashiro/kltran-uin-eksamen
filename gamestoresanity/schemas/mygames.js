@@ -35,14 +35,11 @@ export default {
       title: 'Timer_spilt'
     },
     {
-<<<<<<< Updated upstream
-=======
       name: 'isFavourite',
       type: 'boolean',
       name: 'Favoritt'
     },
     {
->>>>>>> Stashed changes
       name: 'genre',
       type: 'array',
       title: 'Sjangre',
@@ -52,14 +49,6 @@ export default {
           name: 'Sjanger'
         }
       ]
-<<<<<<< Updated upstream
-    },
-    {
-      name: 'isFavourite',
-      type: 'boolean',
-      name: 'Favoritt'
-=======
->>>>>>> Stashed changes
     }
   ]
 }
