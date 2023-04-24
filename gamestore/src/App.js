@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import './css/main.css'
 import { Route, Routes } from "react-router-dom";
 import GameShop from "./components/GameShop";
-import FrontPage from "./components/FrontPage";
+import FrontPage from "./components/DashBoard/FrontPage";
 import GamePage from "./components/GamePage";
 import MyFavourites from "./components/MyFavourites";
 
@@ -12,7 +12,7 @@ function App() {
   const [favourites, setFavourites] = useState([]);
 
   const fetchGameData = async () => {
-    const gameIds = [1837, 324, 1239, 1091, 2598, 1198, 2299, 197, 14, 702];
+    const gameIds = [374507, 856206, 10533, 11260, 2598, 1198, 2299, 197, 14, 702];
 
     const gamesResponse = await fetch(
       `https://api.rawg.io/api/games?ids=${gameIds.join()}&key=6971e514cb3f4acaaac0d86b97575afb`
