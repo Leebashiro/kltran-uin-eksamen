@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-export default function Dashboard() {
+export default function Nav() {
     return (
       <div className="dashboard">
-        <h1>GameStop</h1>
-  
+
+        <Link to="/"><h1>GameStop</h1></Link>
+        
         <ul>
           <li>
             <Link to="/">Home</Link>

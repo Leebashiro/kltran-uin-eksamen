@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Dashboard from "./Dashboard"
+import Nav from "./Nav"
 
 export default function Layout() {
   return (
     <div id="container">
       <nav>
-        <Dashboard />
+        <Nav/>
       </nav>
     
       <main>
@@ -17,7 +17,7 @@ export default function Layout() {
       </section>
 
       <footer>
-        
+        <p>API Attribution</p>
       </footer>
     </div>
   );
