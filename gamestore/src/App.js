@@ -9,7 +9,7 @@ import MyFavourites from "./components/MyFavourites";
 
 function App() {
   const [games, setGames] = useState([]);
-  const [favourites, setFavourites] = useState([]);
+
 
   const fetchGameData = async () => {
     const gameIds = [374507, 856206, 10533, 11260, 2598, 1198, 2299, 197, 14, 702];
@@ -41,12 +41,19 @@ function App() {
   };
 
   
-  /*Handlevognfunksjonalitet*/
-  function addToFavourites (game) {
-    console.log(game.id + "Added to Favourites")
-    setFavourites((prev) => [...prev, game]);
-  };
+  /*Favouritefunksjonalitet*/
 
+  const [favourites, setFavourites] = useState([]);
+
+  function addToFavourites(game) {
+  if (favourites.some(favGame => favGame.id === game.id)) {
+    setFavourites(prev => prev.filter(favGame => favGame.id !== game.id));
+    console.log(game.name + " Removed from Favourites");
+  } else {
+    setFavourites(prev => [...prev, game]);
+    console.log(game.name  + " Added to Favourites");
+  }
+}
   console.log(favourites)
   
 
@@ -57,7 +64,7 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout games={games} setFavourites={setFavourites}/>}>
-        <Route index element={<FrontPage games={games} />} />
+        <Route index element={<FrontPage games={games} favourites={favourites}/>} />
         <Route path="/gameshop" element={<GameShop games={games} />} />
         <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites}  />} />
         <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />

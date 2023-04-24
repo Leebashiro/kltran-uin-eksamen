@@ -20,7 +20,7 @@ export default function ShopDash ({ games, fetchLatestGames }) {
               <Link to="/gameshop" onClick={fetchLatestGames}>
                 Visit Shop
               </Link>
-              
+            
             </section>
           </>
     );
