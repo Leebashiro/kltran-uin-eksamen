@@ -5,11 +5,13 @@ import { Route, Routes } from "react-router-dom";
 import GameShop from "./components/GameShop";
 import FrontPage from "./components/DashBoard/FrontPage";
 import GamePage from "./components/GamePage";
+import MyGames from "./components/MyGames";
+import MyGamesPage from "./components/MyGamesPage";
 import MyFavourites from "./components/MyFavourites";
 
 function App() {
   const [games, setGames] = useState([]);
-
+  const [favourites, setFavourites] = useState([]);
 
   const fetchGameData = async () => {
     const gameIds = [374507, 856206, 10533, 11260, 2598, 1198, 2299, 197, 14, 702];
@@ -32,7 +34,15 @@ function App() {
     const gamesDataWithDetails = gamesData.results.map((game, index) => ({
       ...game,
       description: gamesDetails[index].description_raw,
-      shop: gamesDetails[index].stores,
+      shop: gamesDetails[index].stores
+      ? gamesDetails[index].stores.map((store) => ({
+          id: store.id,
+          name: store.store.name,
+          domain: store.store.domain,
+        }))
+      : [],
+      publishers: gamesDetails[index].publishers,
+      developers: gamesDetails[index].developers,
     /*Fikk fra stackoverflow, hvordan man merger to arrays, 
     https://stackoverflow.com/questions/55607431/how-to-merge-two-array-of-objects-with-reactjs*/
     }));
@@ -43,8 +53,6 @@ function App() {
   
   /*Favouritefunksjonalitet*/
 
-  const [favourites, setFavourites] = useState([]);
-
   function addToFavourites(game) {
   if (favourites.some(favGame => favGame.id === game.id)) {
     setFavourites(prev => prev.filter(favGame => favGame.id !== game.id));
@@ -54,9 +62,6 @@ function App() {
     console.log(game.name  + " Added to Favourites");
   }
 }
-  console.log(favourites)
-  
-
   useEffect(() => {
     fetchGameData();
   }, []);
@@ -67,6 +72,8 @@ function App() {
         <Route index element={<FrontPage games={games} favourites={favourites}/>} />
         <Route path="/gameshop" element={<GameShop games={games} />} />
         <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites}  />} />
+        <Route path="/mygames" element ={<MyGames />} />
+        <Route path="/mygames/:slug" element={<MyGamesPage games={games} />} />
         <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>

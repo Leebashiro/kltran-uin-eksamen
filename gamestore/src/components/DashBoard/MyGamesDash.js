@@ -1,5 +1,9 @@
+import MyGames from "../MyGames";
+
 export default function MyGamesDash () {
-    return (
-        
-    )
+  return (
+    <div>   
+    <MyGames />
+  </div>
+  )
 }
