@@ -50,7 +50,6 @@ function App() {
     setGames(gamesDataWithDetails);
   };
 
-  
   /*Favouritefunksjonalitet*/
 
   function addToFavourites(game) {
@@ -72,8 +71,8 @@ function App() {
         <Route index element={<FrontPage games={games} favourites={favourites}/>} />
         <Route path="/gameshop" element={<GameShop games={games} />} />
         <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites}  />} />
-        <Route path="/mygames" element ={<MyGames />} />
-        <Route path="/mygames/:slug" element={<MyGamesPage games={games} />} />
+        <Route path="/mygames" element ={<MyGames/>} />
+        <Route path="/mygames/:slug" element={<MyGamesPage games={games}/>} />
         <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>

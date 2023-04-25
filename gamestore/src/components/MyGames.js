@@ -4,7 +4,7 @@ import { fetchAllGames} from "../lib/sanity/gamesService";
 
 const MyGames = () => {
   const [mygames, setMyGames] = useState([]);
-
+  
   useEffect(() => {
     async function getGames() {
       const data = await fetchAllGames()

@@ -1,5 +1,5 @@
 export default function GameDetails({game, addToFavourites}) {
- 
+ console.log(game);
   return (
     <div className="gameDetails">
       {game?.background_image && <img src={game.background_image} alt={`${game.name} background`} />}
@@ -25,7 +25,6 @@ export default function GameDetails({game, addToFavourites}) {
           ))}
         </p>
       )}
-
       <button onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
     </div>
   );
