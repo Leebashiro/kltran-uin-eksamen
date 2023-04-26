@@ -34,9 +34,7 @@ export default function MyGamesPage({ games, addToFavourites }) {
           <div>
             {game && (
               <>
-                <h2>{game.name}</h2>
                 <img src={game.background_image} alt={game.name} />
-                <p>Genres: {game.genres?.map((genre) => genre.name).join(', ')}</p>
                 <GameDetails game={game} addToFavourites={addToFavourites} />
               </>
             )}

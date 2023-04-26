@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { fetchAllGames } from "../lib/sanity/gamesService";
 import GameCard from "./GameCard";
@@ -24,7 +23,6 @@ const MyGames = () => {
             genre={mygames.genre}
           />
           <p>Genres: {mygames.genre.join(', ')}</p>
-          <Link to={`/mygames/${mygames.slug.current}`}>Les mer</Link>
           {console.log(mygames.slug.current)}
         </div>
       ))}
