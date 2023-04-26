@@ -47,6 +47,7 @@ function App() {
     }));
 
     setGames(gamesDataWithDetails);
+    console.log(gamesDataWithDetails);
   };
 
   useEffect(() => {
@@ -94,7 +95,7 @@ function App() {
       <Route path="/gameshop" element={<GameShop games={games} />} />
       <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites} />} />
       <Route path="/mygames" element={<MyGames />} />
-      <Route path="/mygames/:slug" element={<GamePage games={games} />} />
+      <Route path="/mygames/:slug" element={<GamePage/>} />
       <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>

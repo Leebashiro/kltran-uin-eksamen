@@ -5,10 +5,10 @@ import MyGamesDash from "./MyGamesDash";
 
 export default function FrontPage({ games, fetchLatestGames, favourites}) {
   return (
-    <>
+    <div className="front-display">
       <ShopDash games={games} fetchLatestGames={fetchLatestGames} />
-      <MyFavDash favourites={favourites} />
       <MyGamesDash/>
-    </>
+      <MyFavDash favourites={favourites} />
+    </div>
   );
 }

@@ -1,10 +1,11 @@
-export default function GameDetails({game, addToFavourites,  showName = true, showPlaytime = true }) {
+export default function GameDetails({game, addToFavourites,  showName = true, showPlaytime = true, showGenres = true }) {
   return (
     <div className="gameDetails">
       {showName && <h2>{game?.name}</h2>}
       <p>{game?.description}</p>
       {showPlaytime && <p>Playtime: {game?.playtime}</p>}
-      <p>Genres: {game?.genres?.map((genre) => genre.name).join(", ")}</p>
+      {showGenres && <p>Genres: {game?.genres?.map((genre) => genre.name).join(", ")}</p>}
+      {/*Gjør om showName, showPlaytime og showGenres om til sine egne props */}
       <p>Platforms: {game?.platforms?.map((platform) => platform.platform.name).join(", ")}</p>
       <p>Release Date: {game?.released}</p>
       <p>Rating: {game?.rating}/5 ({game?.ratings_count} ratings)</p>

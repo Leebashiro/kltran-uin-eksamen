@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ShopDash ({ games, fetchLatestGames }) {
         const dashGames = games.slice(0, 3);
-        console.log(games);
+        console.log(games)
         return (
           <>
             <h2 id="shopDashBoardTitle">GameShop</h2>

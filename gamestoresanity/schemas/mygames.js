@@ -25,7 +25,7 @@ export default {
       title: 'Spill-id'
     },
     {
-      name: 'game_image',
+      name: 'background_image',
       type: 'image',
       title: 'Bilde'
     },

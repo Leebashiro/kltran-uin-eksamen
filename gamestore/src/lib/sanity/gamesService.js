@@ -5,7 +5,7 @@ export const fetchAllGames = async () => {
     API_id,
     game_title,
     genre,
-    "game_image": game_image.asset->url,
+    "background_image": game_image.asset->url,
     slug
   }`);
   return data;
@@ -18,7 +18,7 @@ export const fetchGame = async (slug) => {
       game_title,
       genre,
       hours_played,
-      "game_image": game_image.asset->url
+      "background_image": game_image.asset->url
     }`, {slug});
   return data;
 };

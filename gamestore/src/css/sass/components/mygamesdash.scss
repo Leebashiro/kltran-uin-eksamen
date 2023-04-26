@@ -1,0 +1,25 @@
+.gamesDashBoard {
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.gamesDashBoard img {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+}
+
+.gamesDashBoard h3 {
+    color: white;
+    font-size: 12px;
+}
+
+#gamesDashBoardTitle {
+    color: white;
+}
+
+.gamesDashBoard a {
+    text-decoration: none;
+}
