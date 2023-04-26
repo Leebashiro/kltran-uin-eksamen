@@ -23,7 +23,6 @@ const MyGames = () => {
             genre={mygames.genre}
           />
           <p>Genres: {mygames.genre.join(', ')}</p>
-          {console.log(mygames.slug.current)}
         </div>
       ))}
     </div>

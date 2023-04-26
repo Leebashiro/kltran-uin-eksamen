@@ -8,7 +8,6 @@ export const fetchAllGames = async () => {
     "game_image": game_image.asset->url,
     slug
   }`);
-  console.log(data); 
   return data;
 };
 
@@ -23,3 +22,5 @@ export const fetchGame = async (slug) => {
     }`, {slug});
   return data;
 };
+
+

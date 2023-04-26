@@ -8,7 +8,7 @@ export default function Nav() {
         
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/frontpage">Home</Link>
           </li>
           <li>
             <Link to="/gameshop">GameShop</Link>
