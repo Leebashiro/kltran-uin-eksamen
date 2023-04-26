@@ -1,5 +1,5 @@
 export default {
-  name: 'mygame',
+  name: 'mygames',
   type: 'document',
   title: 'Mine Spill',
   fields: [

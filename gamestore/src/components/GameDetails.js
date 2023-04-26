@@ -1,11 +1,9 @@
-export default function GameDetails({game, addToFavourites}) {
- console.log(game);
+export default function GameDetails({game, addToFavourites,  showName = true, showPlaytime = true }) {
   return (
     <div className="gameDetails">
-      {game?.background_image && <img src={game.background_image} alt={`${game.name} background`} />}
-      <h2>{game?.name}</h2>
+      {showName && <h2>{game?.name}</h2>}
       <p>{game?.description}</p>
-      <p>Playtime: {game?.playtime}</p>
+      {showPlaytime && <p>Playtime: {game?.playtime}</p>}
       <p>Genres: {game?.genres?.map((genre) => genre.name).join(", ")}</p>
       <p>Platforms: {game?.platforms?.map((platform) => platform.platform.name).join(", ")}</p>
       <p>Release Date: {game?.released}</p>
@@ -25,6 +23,7 @@ export default function GameDetails({game, addToFavourites}) {
           ))}
         </p>
       )}
+
       <button onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
     </div>
   );

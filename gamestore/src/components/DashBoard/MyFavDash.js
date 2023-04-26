@@ -1,8 +1,9 @@
-export default function MyFavDash({ favourites }) {
+import GameCard from '../GameCard';
 
+export default function MyFavDash({ favourites }) {
   const numberOfFavourites = favourites.length;
 
-    return (
+  return (
     <>
       <h2>My Favourites ({numberOfFavourites})</h2>
 
@@ -10,15 +11,17 @@ export default function MyFavDash({ favourites }) {
         <div>
           {favourites.map((favourite, index) => (
             <div key={index}>
-              <img src={favourite.background_image} alt={`${favourite.name} background`} />
-              <p>{favourite.name}</p>
+              <GameCard
+                name={favourite.name}
+                background_image={favourite.background_image}
+                slug={favourite.slug}
+              />
             </div>
           ))}
         </div>
       ) : (
-      <p>No favourites yet.</p>
-     )}
+        <p>No favourites yet.</p>
+      )}
     </>
   );
 }
-  

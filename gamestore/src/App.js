@@ -6,7 +6,6 @@ import GameShop from "./components/GameShop";
 import FrontPage from "./components/DashBoard/FrontPage";
 import GamePage from "./components/GamePage";
 import MyGames from "./components/MyGames";
-import MyGamesPage from "./components/MyGamesPage";
 import MyFavourites from "./components/MyFavourites";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
   const [favourites, setFavourites] = useState([]);
 
   const fetchGameData = async () => {
-    const gameIds = [374507, 856206, 10533, 11260, 2598, 1198, 2299, 197, 14, 702];
+    const gameIds = [374507, 856206, 10533, 11260, 2598, 1198, 2299, 197, 14, 702, 427930, 654, 10142, 46889, 374507, 10533, 422, 4032, 263590, 830059];
 
     const gamesResponse = await fetch(
       `https://api.rawg.io/api/games?ids=${gameIds.join()}&key=6971e514cb3f4acaaac0d86b97575afb`
@@ -72,7 +71,7 @@ function App() {
         <Route path="/gameshop" element={<GameShop games={games} />} />
         <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites}  />} />
         <Route path="/mygames" element ={<MyGames/>} />
-        <Route path="/mygames/:slug" element={<MyGamesPage games={games}/>} />
+        <Route path="/mygames/:slug" element={<GamePage games={games}/>} />
         <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>

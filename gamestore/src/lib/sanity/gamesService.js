@@ -1,7 +1,7 @@
 import { client } from './client';
 
 export const fetchAllGames = async () => {
-  const data = await client.fetch(`*[_type == "game"] {
+  const data = await client.fetch(`*[_type == "mygames"] {
     API_id,
     game_title,
     genre,
@@ -14,7 +14,7 @@ export const fetchAllGames = async () => {
 
 export const fetchGame = async (slug) => {
   const data = await client.fetch(`
-    *[_type == "game" && slug.current == $slug] {
+    *[_type == "mygames" && slug.current == $slug] {
       API_id,
       game_title,
       genre,

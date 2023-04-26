@@ -3,7 +3,7 @@ import MyGames from "../MyGames";
 export default function MyGamesDash () {
   return (
     <div>   
-    <MyGames />
+    <MyGames limit={5} /> 
   </div>
   )
 }
