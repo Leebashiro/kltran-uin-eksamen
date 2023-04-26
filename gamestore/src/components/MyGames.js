@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAllGames } from "../lib/sanity/gamesService";
 import GameCard from "./GameCard";
 
-const MyGames = () => {
+const MyGames = ({ limit }) => {
   const [mygames, setMyGames] = useState([]);
   
   useEffect(() => {
@@ -12,17 +12,16 @@ const MyGames = () => {
     }
     getGames();
   }, []);
+  
   return (
     <div>
-      {mygames.map(mygames => (
-        <div key={mygames.API_id}>
+      {mygames.slice(0, limit).map(mygame => (
+        <div key={mygame.API_id}>
           <GameCard
-            name={mygames.game_title}
-            background_image={mygames.game_image}
-            slug={mygames.slug.current}
-            genre={mygames.genre}
+            name={mygame.game_title}
+            background_image={mygame.game_image}
+            slug={mygame.slug.current} 
           />
-          <p>Genres: {mygames.genre.join(', ')}</p>
         </div>
       ))}
     </div>

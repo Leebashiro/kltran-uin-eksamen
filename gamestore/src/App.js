@@ -65,7 +65,6 @@ function App() {
   }
 }
   
-
   const [email, setEmail] = useState('')
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);

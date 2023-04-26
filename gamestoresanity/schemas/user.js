@@ -13,6 +13,11 @@ export default {
         name: 'epost',
         type: 'string',
         title: 'E-post',
+      },
+      {
+        name: 'favourite',
+        type: 'array',
+        title: 'Favoritt',
       }
     ]
   }

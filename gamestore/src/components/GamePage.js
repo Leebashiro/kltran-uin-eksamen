@@ -24,8 +24,8 @@ export default function MyGamesPage({ games, addToFavourites }) {
       <div>
         {mygames ? (
           <div>
-            <h2>{mygames.game_title}</h2>
             <img src={mygames.game_image} alt={mygames.game_title} />
+            <h2>{mygames.game_title}</h2>
             <p>Genres: {mygames.genre.join(', ')}</p>
             <p>Hours played: {mygames.hours_played}</p>
             <GameDetails game={game} addToFavourites={addToFavourites} showName={false} showPlaytime={false} />
