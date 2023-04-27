@@ -1,8 +1,11 @@
-$xsBreakpoint: 576px;
-$smBreakpoint: 768px;
-$mdBreakpoint: 1024px;
-$lgBreakpoint: 1290px;
+$xsBreakpoint: 509px;
+$smBreakpoint: 510px;
+$mdBreakpoint: 800px;
+$lgBreakpoint: 1051px;
 $xlBreakpoint: 1440px;
+
+/*KILDE TIL ALT DETTE HER 
+https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/ 
 
 @mixin xs-breakpoint {
     @media only screen and (max-width: $xsBreakpoint){

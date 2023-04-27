@@ -2,19 +2,23 @@
 
 
 .gameCard {
-    border: 2px solid orange;
-    box-shadow: 0px 24px 71px -3px rgba(0,0,0,0.1);
-    width: 227px;
-    height: 340px;
-    background-color: green;
-  }
+  border: 2px solid orange;
+  border-radius: 4px;
+  box-shadow: 0px 24px 71px -3px rgba(0,0,0,0.1);
+  background-color: green;
+  flex-grow: 1; 
+}
 
 .gameCard_image {
-    width: 325px;
-    height: 325px;
-      
+  width: 100%; 
+  height: auto; 
 }
 
-#cardGenres {
-  display:none;
+.cardName {
+  text-align: center;
 }
+
+.genres {
+  text-align: center;
+}
+

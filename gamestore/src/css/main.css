@@ -111,46 +111,42 @@ body {
     font-size: 20px;
   }
 }
+/*KILDE TIL ALT DETTE HER 
+https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 .gameCard {
   border: 2px solid orange;
+  border-radius: 4px;
   box-shadow: 0px 24px 71px -3px rgba(0, 0, 0, 0.1);
-  width: 227px;
-  height: 340px;
   background-color: green;
+  flex-grow: 1;
 }
 
 .gameCard_image {
-  width: 325px;
-  height: 325px;
+  width: 100%;
+  height: auto;
 }
 
-#cardGenres {
-  display: none;
+.cardName {
+  text-align: center;
 }
 
+.genres {
+  text-align: center;
+}
+
+/*KILDE TIL ALT DETTE HER 
+https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 .shopDashBoard {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 1rem;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 509px) {
   .shopDashBoard {
     display: block;
     text-align: center;
     margin-top: 0.5rem;
-  }
-}
-
-.shopDashBoard img {
-  width: 100%;
-  max-width: 225px;
-  height: 250px;
-}
-@media only screen and (max-width: 576px) {
-  .shopDashBoard img {
-    width: 120px;
-    height: 150px;
   }
 }
 
@@ -174,31 +170,19 @@ body {
 
 .gameDetails p {
   color: white;
-}
-
+} /*KILDE TIL ALT DETTE HER 
+https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 .gamesDashBoard {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 1rem;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 509px) {
   .gamesDashBoard {
     display: block;
     text-align: center;
     margin-top: 0.5rem;
-  }
-}
-
-.gamesDashBoard img {
-  width: 100%;
-  max-width: 225px;
-  height: 250px;
-}
-@media only screen and (max-width: 576px) {
-  .gamesDashBoard img {
-    width: 120px;
-    height: 150px;
   }
 }
 
@@ -216,17 +200,33 @@ body {
   text-decoration: none;
 }
 
+/*KILDE TIL ALT DETTE HER 
+https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 .FrontDisplay {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: "Shop Shop Fav" "Game Game Fav" "Foot Foot Foot";
+  grid-template-areas: "Shop Shop Shop Fav" "Game Game Game Fav" "Foot Foot Foot Foot";
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 509px) {
   .FrontDisplay {
     grid-template-areas: "Shop Shop" "Game Game" "Fav Fav" "Foot Foot";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+  }
+}
+@media only screen and (min-width: 510px) {
+  .FrontDisplay {
+    grid-template-areas: "Shop Shop Shop" "Game Game Game" "Fav Fav Fav" "Foot Foot Foot";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 1051px) {
+  .FrontDisplay {
+    grid-template-areas: "Shop Shop Fav" "Game Game Fav" "Foot Foot Foot";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
@@ -241,5 +241,8 @@ body {
 #FavFront {
   grid-area: Fav;
 }
+
+/*KILDE TIL ALT DETTE HER 
+https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 
 /*# sourceMappingURL=main.css.map */
