@@ -1,14 +1,27 @@
+@import './responsive.scss';
+
 .gamesDashBoard {
     display:flex;
     justify-content: center;
     gap: 20px;
     margin-top: 1rem;
+
+    @include xs-breakpoint {
+        display: block;
+        text-align: center; 
+        margin-top: 0.5rem; 
+    }
 }
 
 .gamesDashBoard img {
     width: 100%;
-    max-width: 300px;
+    max-width: 225px;
     height: 250px;
+    
+    @include xs-breakpoint {
+        width: 120px;
+        height:150px;
+    }
 }
 
 .gamesDashBoard h3 {
@@ -16,8 +29,9 @@
     font-size: 12px;
 }
 
-#gamesDashBoardTitle {
+#GamesDashTitle{
     color: white;
+    text-align: center;
 }
 
 .gamesDashBoard a {

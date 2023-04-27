@@ -8,9 +8,8 @@ export default function GameShop({ games }) {
   https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array*/
   const shopGames = shuffledGames.slice(0, 10);
   return (
-    <>
+      <section className="gameShop">
       <h2 id="shopDashBoardTitle">GameShop</h2>
-      <section className="shopDashBoard">
         {shopGames.map((game) => (
           <GameCard
             key={game.id}
@@ -22,6 +21,5 @@ export default function GameShop({ games }) {
           
         ))}
       </section>
-    </>
   );
 }

@@ -1,13 +1,20 @@
+@import './responsive.scss';
+
+
 .gameCard {
     border: 2px solid orange;
     box-shadow: 0px 24px 71px -3px rgba(0,0,0,0.1);
-    width: 305px;
-    height: 380px;
+    width: 227px;
+    height: 340px;
     background-color: green;
   }
 
-  .gameCard_image {
-    width: 300px;
-    height: 300px;
-  }
+.gameCard_image {
+    width: 325px;
+    height: 325px;
+      
+}
 
+#cardGenres {
+  display:none;
+}

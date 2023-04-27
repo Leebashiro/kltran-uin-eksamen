@@ -1,0 +1,38 @@
+$xsBreakpoint: 576px;
+
+@mixin xs-breakpoint {
+    @media only screen and (max-width: $xsBreakpoint){
+    @content
+}
+}
+
+.FrontDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "Shop Shop Fav"
+                         "Game Game Fav"
+                         "Foot Foot Foot";
+
+    @include xs-breakpoint{
+        grid-template-areas: "Shop Shop"
+                             "Game Game"
+                             "Fav Fav"
+                              "Foot Foot";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+#ShopFront {
+    grid-area: Shop;
+  }
+
+#GamesFront {
+    grid-area: Game;
+}
+
+#FavFront {
+    grid-area: Fav;
+}
+

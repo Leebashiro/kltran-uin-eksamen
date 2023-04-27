@@ -7,6 +7,10 @@ export default function ShopDash ({ games, fetchLatestGames }) {
         return (
           <>
             <h2 id="shopDashBoardTitle">GameShop</h2>
+            <Link to="/gameshop" onClick={fetchLatestGames} className="shop-link">
+              Visit Shop
+            </Link>
+            
             <section className="shopDashBoard">
               {dashGames.map((game) => (
                 <GameCard
@@ -18,9 +22,7 @@ export default function ShopDash ({ games, fetchLatestGames }) {
                   genres={game.genres}
                 />
               ))}
-              <Link to="/gameshop" onClick={fetchLatestGames}>
-                Visit Shop
-              </Link>
+            
             
             </section>
           </>

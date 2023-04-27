@@ -16,7 +16,7 @@ export default function Layout() {
         
       </section>
 
-      <footer>
+      <footer >
         <p>API Attribution</p>
       </footer>
     </div>

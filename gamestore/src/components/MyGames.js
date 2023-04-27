@@ -15,20 +15,21 @@ const MyGames = ({ limit }) => {
   }, []);
   
   return (
-    <div>
-      
-      {mygames.slice(0, limit).map(game => (
-        <div key={game.API_id}>
-          <GameCard
-            name={game.game_title}
-            background_image={game.background_image}
-            slug={game.slug.current}
-            genre={game.genre}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <h2 id="GamesDashTitle">My Games</h2>
+      <section className="gamesDashBoard">
+        {mygames.slice(0, limit).map(game => (
+            <GameCard
+              key={game.API_id}
+              name={game.game_title}
+              background_image={game.background_image}
+              slug={game.slug.current}
+              genre={game.genre}
+            />
+        ))}
+        
+      </section>
+    </>
   );
-};
-
+}
 export default MyGames;

@@ -1,14 +1,26 @@
+@import './responsive.scss';
+
 .shopDashBoard {
     display:flex;
     justify-content: center;
     gap: 20px;
     margin-top: 1rem;
-}
 
+    @include xs-breakpoint {
+        display: block;
+        text-align: center; 
+        margin-top: 0.5rem; 
+    }
+}
 .shopDashBoard img {
     width: 100%;
-    max-width: 300px;
+    max-width: 225px;
     height: 250px;
+
+    @include xs-breakpoint {
+        width: 120px;
+        height:150px;
+    }
 }
 
 .shopDashBoard h3 {
@@ -18,7 +30,8 @@
 
 #shopDashBoardTitle {
     color: white;
-}
+    text-align: center;
+  }
 
 .shopDashBoard a {
     text-decoration: none;
