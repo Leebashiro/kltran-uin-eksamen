@@ -1,0 +1,40 @@
+#shopDashBoard {
+    display:flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#shopDashBoard h3 {
+    color: white;
+    font-size: 12px;
+}
+
+#shopDashBoardTitle {
+    color: white;
+    text-align: center;
+    margin-top: 3.5rem;
+  }
+
+#shopDashBoard a {
+    text-decoration: none;
+    color:white;
+}
+
+.shop-link-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .shop-link {
+    padding: 0.5rem 1rem;
+    background-color: #0074d9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+
+    @media (min-width: 1051px) {
+        margin-left: 3.5rem;
+    }
+  }

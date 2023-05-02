@@ -25,7 +25,7 @@ export default {
       title: 'Spill-id'
     },
     {
-      name: 'background_image',
+      name: 'game_image',
       type: 'image',
       title: 'Bilde'
     },
@@ -35,12 +35,7 @@ export default {
       title: 'Timer_spilt'
     },
     {
-      name: 'isFavourite',
-      type: 'boolean',
-      name: 'Favoritt'
-    },
-    {
-      name: 'genre',
+      name: 'mygenre',
       type: 'array',
       title: 'Sjangre',
       of: [

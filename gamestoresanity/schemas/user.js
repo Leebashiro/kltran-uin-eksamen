@@ -16,8 +16,9 @@ export default {
       },
       {
         name: 'favourite',
-        type: 'array',
+        type: 'reference',
         title: 'Favoritt',
+        to: [{ type: 'mygames' }]
       }
     ]
   }

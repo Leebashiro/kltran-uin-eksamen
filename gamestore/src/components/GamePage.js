@@ -21,28 +21,32 @@ export default function GamePage({ games, addToFavourites }) {
 
   return (
     <>
-      <div>
         {mygames ? (
-          <div>
-             <img src={mygames.background_image} alt={mygames.name} />
-            <h2>{mygames.game_title}</h2>
-            <p>Genres: {mygames.genre.join(', ')}</p>
-            <p>Hours played: {mygames.hours_played}</p>
-            <GameDetails game={game} addToFavourites={addToFavourites} showName={false} showPlaytime={false} showGenres={false}  />
-            {/*Setter inn showName={false}- som props fordi jeg ikke ønsker å få dem fra GameDetails komponente, grunnet at jeg
-            ikke vil at det skal kræsje med data som vi allerede får fra sanity.api (som jeg antar at man må bruke) */}
-          </div>
+          <>  
+              <div className="gameContainer">
+              <img src={mygames.gameImage} alt={mygames.game_title} />
+              <h2>{mygames.game_title}</h2>
+              <p className="mygenre">{mygames.mygenre.join(' | ')}</p>
+              <p>Hours played: {mygames.hours_played}</p>
+              <GameDetails game={game} addToFavourites={addToFavourites} showName={false} showPlaytime={false} showGenres={false} />
+              <button id="FavButton" onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
+             
+            </div>
+          </>
         ) : (
           <div>
-            {game && (
+              {game && (
               <>
-                <img src={game.background_image} alt={game.name} />
+               <img src={game.background_image} alt={game.name} />
+               <div className="gameContainer">
                 <GameDetails game={game} addToFavourites={addToFavourites} />
-              </>
-            )}
-          </div>
-        )}
-      </div>
-    </>
-  );
+                <button id="FavButton" onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
+              </div>
+              
+            </>
+          )}
+        </div>
+      )}
+  </>
+);
 }

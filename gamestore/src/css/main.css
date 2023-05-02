@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 html {
@@ -111,8 +111,6 @@ body {
     font-size: 20px;
   }
 }
-/*KILDE TIL ALT DETTE HER 
-https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 .gameCard {
   border: 2px solid orange;
   border-radius: 4px;
@@ -120,37 +118,145 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
   background-color: green;
   flex-grow: 1;
 }
+@media (min-width: 350px) {
+  .gameCard {
+    margin-left: 7px;
+    margin-right: 7px;
+    flex-basis: 27.5%;
+  }
+}
+@media (min-width: 510px) {
+  .gameCard {
+    flex-basis: 30%;
+  }
+}
+@media (min-width: 768px) {
+  .gameCard {
+    flex-basis: 15%;
+  }
+}
+@media (min-width: 992px) {
+  .gameCard {
+    height: 375px;
+    width: 300px;
+  }
+}
+.gameCard:hover {
+  opacity: 0.6;
+}
+
+.GamesCardDash {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (min-width: 350px) {
+  .GamesCardDash {
+    margin: 0 0;
+  }
+}
+@media (min-width: 1051px) {
+  .GamesCardDash {
+    margin-left: 50px;
+    margin-right: 50px;
+    gap: 25px;
+  }
+}
 
 .gameCard_image {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 80%;
+}
+@media (min-width: 350px) {
+  .gameCard_image {
+    height: 120px;
+    width: 200px;
+  }
+}
+@media (min-width: 510px) {
+  .gameCard_image {
+    height: 150px;
+    width: 325px;
+  }
+}
+@media (min-width: 768px) {
+  .gameCard_image {
+    height: 200px;
+    width: 350px;
+  }
+}
+@media (min-width: 992px) {
+  .gameCard_image {
+    height: 250px;
+    width: 350px;
+  }
+}
+@media (min-width: 1051px) {
+  .gameCard_image {
+    height: 260px;
+  }
 }
 
 .cardName {
   text-align: center;
+  font-size: 20px !important;
+  color: white;
+}
+@media (min-width: 350px) {
+  .cardName {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 510px) {
+  .cardName {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 768px) {
+  .cardName {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 992px) {
+  .cardName {
+    font-size: 15px !important;
+  }
 }
 
 .genres {
   text-align: center;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
 }
-
-/*KILDE TIL ALT DETTE HER 
-https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
-.shopDashBoard {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 1rem;
+@media (min-width: 350px) {
+  .genres {
+    font-size: 12px;
+  }
 }
-@media only screen and (max-width: 509px) {
-  .shopDashBoard {
-    display: block;
-    text-align: center;
-    margin-top: 0.5rem;
+@media (min-width: 510px) {
+  .genres {
+    font-size: 13px;
+  }
+}
+@media (min-width: 768px) {
+  .genres {
+    font-size: 12px;
+  }
+}
+@media (min-width: 992px) {
+  .genres {
+    font-size: 17px;
+    margin-top: 1rem;
   }
 }
 
-.shopDashBoard h3 {
+#shopDashBoard {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#shopDashBoard h3 {
   color: white;
   font-size: 12px;
 }
@@ -158,10 +264,32 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
 #shopDashBoardTitle {
   color: white;
   text-align: center;
+  margin-top: 3.5rem;
 }
 
-.shopDashBoard a {
+#shopDashBoard a {
   text-decoration: none;
+  color: white;
+}
+
+.shop-link-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.shop-link {
+  padding: 0.5rem 1rem;
+  background-color: #0074d9;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+}
+@media (min-width: 1051px) {
+  .shop-link {
+    margin-left: 3.5rem;
+  }
 }
 
 .gameDetails h2 {
@@ -170,33 +298,34 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
 
 .gameDetails p {
   color: white;
-} /*KILDE TIL ALT DETTE HER 
-https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
-.gamesDashBoard {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 1rem;
-}
-@media only screen and (max-width: 509px) {
-  .gamesDashBoard {
-    display: block;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
 }
 
-.gamesDashBoard h3 {
+#gamesDashBoard {
+  display: flex;
+  margin-top: 1rem;
+}
+
+#gamesDashBoard h3 {
   color: white;
   font-size: 12px;
 }
 
 #GamesDashTitle {
-  color: white;
   text-align: center;
+  padding: 2.5rem 0;
+  color: white !important;
 }
 
-.gamesDashBoard a {
+#GamesDashTitle a {
+  color: white;
+  text-decoration: none;
+}
+
+#GamesDashTitle a:hover {
+  opacity: 0.6;
+}
+
+#gamesDashBoard a {
   text-decoration: none;
 }
 
@@ -204,29 +333,33 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
 https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
 .FrontDisplay {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: "Shop Shop Shop Fav" "Game Game Game Fav" "Foot Foot Foot Foot";
 }
-@media only screen and (max-width: 509px) {
+@media only screen and (max-width: 465px) {
   .FrontDisplay {
     grid-template-areas: "Shop Shop" "Game Game" "Fav Fav" "Foot Foot";
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr 2fr 0.5fr 0.5fr;
   }
 }
-@media only screen and (min-width: 510px) {
+@media only screen and (min-width: 466px) {
   .FrontDisplay {
     grid-template-areas: "Shop Shop Shop" "Game Game Game" "Fav Fav Fav" "Foot Foot Foot";
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 0.5fr;
   }
 }
-@media only screen and (min-width: 1051px) {
+@media only screen and (min-width: 768px) {
   .FrontDisplay {
-    grid-template-areas: "Shop Shop Fav" "Game Game Fav" "Foot Foot Foot";
+    grid-template-areas: "Shop Shop Shop" "Game Game Game" "Fav Fav Fav" "Foot Foot Foot";
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 0.5fr;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .FrontDisplay {
+    grid-template-areas: "Shop Shop Line Fav" "Game Game Line Fav" "Foot Foot Foot Foot";
+    grid-template-columns: 1.6fr 1.6fr 0.1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr;
   }
 }
 
@@ -242,7 +375,149 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
   grid-area: Fav;
 }
 
+#Footer {
+  grid-area: Footer;
+}
+
 /*KILDE TIL ALT DETTE HER 
 https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass/5725096-add-breakpoints-for-responsive-layouts*/
+#Footer {
+  background-color: green;
+}
+
+#Footer p {
+  margin: 0 0;
+}
+
+#gameShop {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 60px 30px 60px 30px;
+}
+
+#gameShop a {
+  text-decoration: none;
+}
+
+@media (min-width: 995px) {
+  #Line {
+    border-left: 10px solid greenyellow;
+    border-radius: 30px;
+    height: 200%;
+    margin-top: 50px;
+  }
+}
+#MyFavTitle {
+  color: white;
+  text-align: center;
+  padding: 2.2rem 1rem;
+}
+
+#FavCardDash h3 {
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 1051px) {
+  #FavCardDash img {
+    height: 175px;
+  }
+}
+
+#FavCardDash {
+  text-align: center;
+  display: flex;
+  /*  flex-direction: column; */
+  /* gap: 20px;*/
+  flex-grow: 1;
+  margin-top: 36.5px;
+  margin-left: 40px;
+  width: 400px;
+}
+@media (min-width: 992px) {
+  #FavCardDash {
+    width: 300px;
+    height: 300px;
+    margin-right: 30px;
+  }
+}
+@media (min-width: 1051px) {
+  #FavCardDash {
+    height: 300px;
+    margin-right: 55px;
+    flex-direction: column;
+    gap: 20px;
+    width: 270px;
+  }
+}
+
+#FavButton {
+  background-color: yellow;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.gameContainer img {
+  border: 2px solid black;
+}
+
+.mygenre {
+  border-radius: 4px;
+  background-color: #E983D8;
+}
+
+.gameContainer {
+  background-color: #F9C7E4;
+  border: 5px solid green;
+}
+@media (min-width: 992px) {
+  .gameContainer {
+    margin: 2rem 15rem;
+  }
+}
+@media (min-width: 1051px) {
+  .gameContainer {
+    width: 60%;
+  }
+}
+
+.gameContainer h2 {
+  font-size: 30px;
+}
+
+.gameContainer p, h2 {
+  color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (min-width: 1051px) {
+  .gameContainer p, h2 {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+#gameStores a {
+  background-color: #0074d9;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: 0.7rem;
+}
+
+.MyGames {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 60px 30px 60px 30px;
+}
 
 /*# sourceMappingURL=main.css.map */

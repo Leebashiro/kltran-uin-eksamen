@@ -10,7 +10,6 @@ export default function Nav() {
     setIsOpen(!isOpen);
   };
   
-  console.log(handleMenuClick);
   return (
     <div className="dashboard">
       <Link to="/">

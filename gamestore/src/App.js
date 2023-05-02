@@ -47,7 +47,6 @@ function App() {
     }));
 
     setGames(gamesDataWithDetails);
-    console.log(gamesDataWithDetails);
   };
 
   useEffect(() => {
@@ -66,14 +65,14 @@ function App() {
   }
 }
   
-  const [email, setEmail] = useState('')
-  const [user, setUser] = useState(null)
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [email, setEmail] = useState('')
+const [user, setUser] = useState(null)
+const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  /*I mitt hue syntes jeg at det blir enklere å bruke en funksjon i onClick for å registrere at brukeren er på*/
-  };
+const handleLogin = () => {
+  setIsLoggedIn(true);
+  setUser(JSON.parse(localStorage.getItem('user')));
+};
 
   return (
     <Routes>
@@ -87,6 +86,7 @@ function App() {
             setEmail={setEmail}
             setUser={setUser}
             user={user}
+            isLoggedIn={isLoggedIn}
             />
           )
         }
@@ -95,7 +95,7 @@ function App() {
       <Route path="/gameshop" element={<GameShop games={games} />} />
       <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites} />} />
       <Route path="/mygames" element={<MyGames />} />
-      <Route path="/mygames/:slug" element={<GamePage/>} />
+      <Route path="/mygames/:slug" element={<GamePage addToFavourites={addToFavourites} />} />
       <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>

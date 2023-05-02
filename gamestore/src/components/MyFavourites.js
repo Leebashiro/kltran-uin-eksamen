@@ -3,8 +3,9 @@ import GameCard from "./GameCard";
 export default function MyFavourites({ favourites }) {
   console.log(favourites)
   return (
-    <div>
-      <h1>My Favourites</h1>
+    <>
+      <h1 id="MyFavTitle">My Favourites</h1>
+      <section className="GamesCardDash">
       {favourites.map((favourite, index) => (
         <GameCard
           key={index}
@@ -13,6 +14,7 @@ export default function MyFavourites({ favourites }) {
           slug={favourite.slug}
         />
       ))}
-    </div>
+    </section>
+    </>
   );
 }

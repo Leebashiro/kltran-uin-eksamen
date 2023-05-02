@@ -1,0 +1,31 @@
+#gamesDashBoard {
+    display:flex;
+    margin-top: 1rem;
+}
+
+#gamesDashBoard h3 {
+    color: white;
+    font-size: 12px;
+}
+
+#GamesDashTitle{
+    text-align: center;
+    padding: 2.5rem 0;
+    color:white !important
+}
+
+#GamesDashTitle a {
+    color: white;
+    text-decoration: none;
+}
+
+#GamesDashTitle a:hover {
+    opacity: 0.6; 
+  }
+
+
+#gamesDashBoard a {
+    text-decoration: none;
+}
+
+

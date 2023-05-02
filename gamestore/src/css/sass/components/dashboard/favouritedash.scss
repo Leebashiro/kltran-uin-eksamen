@@ -1,0 +1,58 @@
+#MyFavTitle {
+    color: white;
+    text-align: center;
+    padding: 2.2rem 1rem;
+}
+
+#FavCardDash h3 {
+    color:white;
+    text-decoration: none;
+}
+
+#FavCardDash img {
+    @media (min-width: 350px) {
+       
+    }
+    
+    @media (min-width: 510px) {
+     
+    }
+    
+    @media (min-width: 768px) {
+       
+    }
+        
+    @media (min-width: 992px) {
+    }
+        
+    @media (min-width: 1051px) {
+    height: 175px;
+    }
+}
+#FavCardDash {
+    text-align: center;
+    display:flex;
+   /*  flex-direction: column; */
+   /* gap: 20px;*/
+    flex-grow: 1;
+    margin-top: 36.5px;
+    margin-left: 40px;
+    width: 400px;
+        @media (min-width: 992px) {
+            width: 300px;
+            height: 300px;
+            margin-right: 30px;
+        }
+        
+        @media (min-width: 1051px) {
+        height: 300px;
+        margin-right: 55px;
+        flex-direction: column;
+        gap: 20px;
+        width: 270px;
+        }
+}
+
+#FavButton {
+    background-color: yellow;
+}
