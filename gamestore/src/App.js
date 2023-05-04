@@ -53,21 +53,20 @@ function App() {
     fetchGameData();
   }, []);
 
-  /*Favouritefunksjonalitet*/
 
   const [favourites, setFavourites] = useState([]);
   
   function addToFavourites(game) {
   if (favourites.some(favGame => favGame.id === game.id)) {
-    setFavourites(prev => prev.filter(favGame => favGame.id !== game.id));
-  } else {
-    setFavourites(prev => [...prev, game]);
+      setFavourites(prev => prev.filter(favGame => favGame.id !== game.id));
+    } else {
+      setFavourites(prev => [...prev, game]);
+    }
   }
-}
   
-const [email, setEmail] = useState('')
-const [user, setUser] = useState(null)
-const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState('')
+  const [user, setUser] = useState(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 const handleLogin = () => {
   setIsLoggedIn(true);

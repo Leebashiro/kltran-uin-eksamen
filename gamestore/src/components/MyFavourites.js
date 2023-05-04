@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import GameCard from "./GameCard";
 
 export default function MyFavourites({ favourites }) {
-  console.log(favourites)
   return (
     <>
-      <h1 id="MyFavTitle">My Favourites</h1>
-      <section className="GamesCardDash">
+      <h2 id="MyFavTitle">
+        <Link to="/myfavourites">My Favourites</Link>
+      </h2>
+
+      <section id="MyFavourites" className="my-favourites-section">
       {favourites.map((favourite, index) => (
         <GameCard
           key={index}

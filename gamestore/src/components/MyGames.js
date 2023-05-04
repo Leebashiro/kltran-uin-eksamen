@@ -28,6 +28,7 @@ const MyGames = ({ limit, isDashboard }) => {
       <h2 id="GamesDashTitle">
         <Link to="/mygames">My Games ({mygamesCount})</Link>
       </h2>
+      
       <section className={isDashboard ? "GamesCardDash" : "MyGames"} id="gamesDashBoard">
         {mygames.slice(0, limit).map(game => (
           <GameCard

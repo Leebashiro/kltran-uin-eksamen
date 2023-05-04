@@ -17,9 +17,9 @@ export default function Layout() {
         
       </section>
 
-      <footer >
+      <footer>
         <Footer/>
       </footer>
-    </div>
+      </div>
   );
 }

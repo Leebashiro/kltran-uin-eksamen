@@ -23,13 +23,15 @@ export default function Login({ handleLogin, setEmail, email, setUser, user }) {
 
   return (
     <>
-      {!user ? (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">E-postadresse:</label>
-          <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} required />
-          <button type="submit">Logg inn</button>
-        </form>
-      ) : null}
+      <div id="login-container">
+        {!user ? (
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="email">E-postadresse:</label>
+            <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} required />
+            <button type="submit">Logg inn</button>
+          </form>
+        ) : null}
+      </div>
     </>
   );
 }

@@ -7,7 +7,11 @@ export default function ShopDash ({ games, fetchLatestGames }) {
   
   return (
     <>
-      <h2 id="shopDashBoardTitle">GameShop</h2>
+      <h2 id="shopDashBoardTitle">
+      <Link to="/gameshop">Shop</Link>
+      </h2>
+
+
       <div className="shop-link-container">
       <Link to="/gameshop" onClick={fetchLatestGames} className="shop-link">
         Visit Shop

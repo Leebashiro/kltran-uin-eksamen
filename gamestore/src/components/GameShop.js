@@ -10,6 +10,7 @@ export default function GameShop({ games }) {
   return (
     <>
     <h2 id="shopDashBoardTitle">GameShop</h2>
+    
       <section id="gameShop">
         {shopGames.map((game) => (
           <GameCard

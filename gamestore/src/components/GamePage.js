@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchGame } from '../lib/sanity/gamesService';
 import GameDetails from './GameDetails';
+import Pink from "../images/pink.jpg";
 
 export default function GamePage({ games, addToFavourites }) {
   const { slug } = useParams();
@@ -20,27 +21,30 @@ export default function GamePage({ games, addToFavourites }) {
   }, [slug]);
 
   return (
-    <>
+    <> 
+      <img className="background-img" src={Pink} alt="Pink"/>
         {mygames ? (
           <>  
-              <div className="gameContainer">
+            <div className="gameContainer">
               <img src={mygames.gameImage} alt={mygames.game_title} />
-              <h2>{mygames.game_title}</h2>
-              <p className="mygenre">{mygames.mygenre.join(' | ')}</p>
-              <p>Hours played: {mygames.hours_played}</p>
-              <GameDetails game={game} addToFavourites={addToFavourites} showName={false} showPlaytime={false} showGenres={false} />
-              <button id="FavButton" onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
-             
+               <h2>{mygames.game_title}</h2>
+               <button id="FavButton" onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
+                <p className="mygenre">{mygames.mygenre.join(' | ')}</p>
+                 <p>Hours played: {mygames.hours_played}</p>
+                <GameDetails game={game} addToFavourites={addToFavourites} showName={false} showPlaytime={false} showGenres={false} />
+              
             </div>
           </>
         ) : (
           <div>
               {game && (
               <>
-               <img src={game.background_image} alt={game.name} />
-               <div className="gameContainer">
-                <GameDetails game={game} addToFavourites={addToFavourites} />
+              <div className="gameContainer">
+                <img src={game.background_image} alt={game.name} />
                 <button id="FavButton" onClick={() => addToFavourites(game, game.background_image, game.name, game.genres?.map((genre) => genre.name).join(", "))}>Favourite</button>
+                 
+                 <GameDetails game={game} addToFavourites={addToFavourites} />
+               
               </div>
               
             </>

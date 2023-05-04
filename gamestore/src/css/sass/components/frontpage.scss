@@ -6,35 +6,31 @@
    @include xs-breakpoint{
         grid-template-areas: "Shop Shop"
                              "Game Game"
-                             "Fav Fav"
-                              "Foot Foot";
+                             "Fav Fav";
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr 2fr 0.5fr 0.5fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     @include sm-breakpoint{
         grid-template-areas: "Shop Shop Shop"
                             "Game Game Game"
-                             "Fav Fav Fav"
-                             "Foot Foot Foot";
+                             "Fav Fav Fav";
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
     @include md-breakpoint{
         grid-template-areas: "Shop Shop Shop"
                             "Game Game Game"
-                             "Fav Fav Fav"
-                             "Foot Foot Foot";
+                             "Fav Fav Fav";
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     @include lg-breakpoint {
         grid-template-areas: "Shop Shop Line Fav"
-                            "Game Game Line Fav"
-                            "Foot Foot Foot Foot";
+                            "Game Game Line Fav";
         grid-template-columns: 1.6fr 1.6fr 0.1fr 1fr;
-        grid-template-rows: 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr 1fr;
     }
 }
 
@@ -49,8 +45,3 @@
 #FavFront {
     grid-area: Fav;
 }
-
-#Footer {
-    grid-area: Footer;
-}
-

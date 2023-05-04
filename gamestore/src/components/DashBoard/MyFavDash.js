@@ -6,7 +6,7 @@ export default function MyFavDash({ favourites }) {
   return (
     <>
       <h2 id="MyFavTitle">My Favourites ({numberOfFavourites})</h2>
-      <section id="FavCardDash">
+      <aside id="FavCardDash">
         {favourites ? (
           <>
             {favourites.map((favourite, index) => (
@@ -21,7 +21,7 @@ export default function MyFavDash({ favourites }) {
         ) : (
           <p>No favourites yet.</p>
         )}
-      </section>
+      </aside>
     </>
   );
 }
