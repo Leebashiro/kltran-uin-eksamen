@@ -13,7 +13,7 @@ export default function GameDetails({game, showName = true, showPlaytime = true,
     const sortedTags = game?.tags?.sort((a, b) => b.count - a.count);
     const topTags = sortedTags?.slice(0, 20);
     const words = topTags?.map(tag => ({ text: tag.name, value: 20 }));
-  
+
     const [size, setSize] = useState([900, 400]);
   
     useEffect(() => {
@@ -47,13 +47,13 @@ export default function GameDetails({game, showName = true, showPlaytime = true,
         {showName && <h2>{game?.name}</h2>}
         <p>{game?.description}</p>
         <p>Release Date: {game?.released}</p>
-        <p>Publisher: {game?.publishers?.map((publisher) => publisher.name).join(", ")}</p>
-        <p>Developers: {game?.developers?.map((developer) => developer.name).join(", ")}</p>
+        <p>Publisher: {game?.publishers?.map((publisher) => publisher?.name).join(", ")}</p>
+        <p>Developers: {game?.developers?.map((developer) => developer?.name).join(", ")}</p>
         {showPlaytime && <p>Playtime: {game?.playtime}</p>}
-        {showGenres && <p>Genres: {game?.genres?.map((genre) => genre.name).join(", ")}</p>}
+        {showGenres && <p>Genres: {game?.genres?.map((genre) => genre?.name).join(", ")}</p>}
         {/*Gjør om showName, showPlaytime og showGenres om til sine egne props slik at jeg kan sende dem ned for å rendre dem basert på
         props istedenfor*/}
-        <p>Platforms: {game?.platforms?.map((platform) => platform.platform.name).join(", ")}</p>
+        <p>Platforms: {game?.platforms?.map((platform) => platform?.platform.name).join(", ")}</p>
         <p>Rating: {game?.rating}/5 ({game?.ratings_count} ratings)</p>
         <p>Metacritic Score: {game?.metacritic}</p>
         
@@ -65,6 +65,8 @@ export default function GameDetails({game, showName = true, showPlaytime = true,
            {game.shop.map((store) => (
            <a key={store.id} href={`https://${store.domain}/games/${game.slug}`} target="_blank" rel="noreferrer noopener">
            {store.name}
+          {/*Hadde ikke nok requests fra API-call, så brukte desverre ikke direkte-link til gamestores gjennom stores API, men
+          bare en generell lenke til spillsiden.*/}
            </a>
           ))}
         </p>

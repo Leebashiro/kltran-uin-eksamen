@@ -43,9 +43,6 @@
 .gameContainer {
     background-color: #F9C7E4;
     border: 5px solid black;
-
-    @media (min-width: 350px) {
-    }
     
     @media (min-width: 510px) {
     margin: 2rem 3rem;
@@ -64,7 +61,7 @@
     }
 }
 
-.gameDetails p{
+.gameDetails p {
     color: white;
 }
 
@@ -76,23 +73,6 @@
     color: black;
     margin-left: 20px;
     margin-right: 20px;
-    @media (min-width: 350px) {
-      
-    }
-    
-    @media (min-width: 510px) {
-      
-    
-    }
-    
-    @media (min-width: 768px) {
-     
-    }
-    
-    
-    @media (min-width: 992px) {
- 
-    }
     
     @media (min-width: 1051px) {
         margin-left: 3rem;

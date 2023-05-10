@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Nav from "./Nav"
+import Nav from "./DashBoard/Nav"
 import Footer from "./DashBoard/Footer"
 
 export default function Layout() {

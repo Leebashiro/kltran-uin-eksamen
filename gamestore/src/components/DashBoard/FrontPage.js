@@ -8,7 +8,7 @@ import Pink from "../../images/pink.jpg";
 export default function FrontPage({ games, fetchLatestGames, favourites}) {
   return (
     <> 
-       <img className="background-img" src={Pink} alt="Pink"/>
+        <img className="background-img" src={Pink} alt="Pink"/>
        
         <main className="FrontDisplay">
         <div id="ShopFront"><ShopDash games={games} fetchLatestGames={fetchLatestGames} /></div>

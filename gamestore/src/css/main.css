@@ -468,8 +468,17 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
   left: 0;
 }
 
-#Footer p {
-  margin: 0 0;
+#Footer a {
+  margin: 2 0;
+  border-bottom: solid 1px;
+}
+
+#Footer a:hover {
+  color: blue !important;
+}
+
+#Footer a, p {
+  letter-spacing: 0.5px;
   color: white;
 }
 
@@ -543,7 +552,6 @@ https://openclassrooms.com/en/courses/5625786-produce-maintainable-css-with-sass
 }
 
 #FavCardDash {
-  align-items: center;
   display: flex;
   flex-grow: 1;
   margin-top: 70px;

@@ -7,20 +7,14 @@ export default function MyFavDash({ favourites }) {
     <>
       <h2 id="MyFavTitle">My Favourites ({numberOfFavourites})</h2>
       <aside id="FavCardDash">
-        {favourites ? (
-          <>
-            {favourites.map((favourite, index) => (
-              <GameCard
-                key={index}
-                name={favourite.name}
-                background_image={favourite.background_image}
-                slug={favourite.slug}
-              />
-            ))}
-          </>
-        ) : (
-          <p>No favourites yet.</p>
-        )}
+        {favourites.map((favourite, index) => (
+          <GameCard
+            key={index}
+            name={favourite.name}
+            background_image={favourite.background_image}
+            slug={favourite.slug}
+          />
+        ))}
       </aside>
     </>
   );

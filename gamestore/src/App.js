@@ -42,7 +42,7 @@ function App() {
       : [],
       publishers: gamesDetails[index].publishers,
       developers: gamesDetails[index].developers,
-    /*Fikk fra stackoverflow, hvordan man merger to arrays, 
+    /*Fikk fra stackoverflow, hvordan man merger to arrays, gjorde for å sette all data inn i variabelen gamesDataWithDetails 
     https://stackoverflow.com/questions/55607431/how-to-merge-two-array-of-objects-with-reactjs*/
     }));
 
@@ -53,7 +53,7 @@ function App() {
     fetchGameData();
   }, []);
 
-
+  /*Favorittfunksjon med useState*/
   const [favourites, setFavourites] = useState([]);
   
   function addToFavourites(game) {
@@ -64,6 +64,7 @@ function App() {
     }
   }
   
+  /*Loginfunksjon*/
   const [email, setEmail] = useState('')
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -7,7 +7,16 @@
     bottom: 0px; left: 0;
 }
 
-#Footer p{
-    margin: 0 0;
-    color: white;
+#Footer a{
+    margin: 2 0;
+    border-bottom: solid 1px;
 }
+
+#Footer a:hover {
+    color: blue !important;
+}
+
+#Footer a, p {
+    letter-spacing: 0.5px;
+    color: white;
+  }

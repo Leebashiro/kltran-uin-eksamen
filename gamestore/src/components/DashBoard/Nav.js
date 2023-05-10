@@ -6,11 +6,11 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export default function Nav() {
   
   const [isNavExpanded, setIsNavExpanded] = useState(false)
-/*Kode for responsiv Nav: https://blog.logrocket.com/create-responsive-navbar-react-css/*/
+  /*Kode for responsiv Nav på react: https://blog.logrocket.com/create-responsive-navbar-react-css/*/
       return (
         <nav className="dashboard">
           <Link to="/">
-            <h1>GameStop</h1>
+            <h1>Khameleon</h1>
           </Link>
               
                   <FontAwesomeIcon
