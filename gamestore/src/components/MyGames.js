@@ -1,33 +1,49 @@
 import { useEffect, useState } from "react";
-import { fetchAllGames } from "../lib/sanity/gamesService";
+import { fetchAllGames, fetchCount } from "../lib/sanity/gamesService";
 import GameCard from "./GameCard";
+import { Link } from "react-router-dom";
 
-const MyGames = ({ limit }) => {
+const MyGames = ({ limit, isDashboard }) => {
   const [mygames, setMyGames] = useState([]);
+  const [mygamesCount, setMygamesCount] = useState([]);
   
   useEffect(() => {
     async function getGames() {
       const data = await fetchAllGames()
       setMyGames(data);
-      console.log(data);
     }
     getGames();
   }, []);
-  
+
+  useEffect(() => {
+    async function getCount() {
+      const dataCount = await fetchCount()
+      setMygamesCount(dataCount);
+    }
+    getCount();
+  }, []);
+
   return (
-    <div>
+    <>
+      <h2 id="GamesDashTitle">
+        <Link to="/mygames">My Games ({mygamesCount})</Link>
+      </h2>
       
-      {mygames.slice(0, limit).map(game => (
-        <div key={game.API_id}>
+      <section className={isDashboard ? "GamesCardDash" : "MyGames"} id="gamesDashBoard">
+        {mygames.slice(0, limit).map(game => (
           <GameCard
+            key={game.API_id}
             name={game.game_title}
-            background_image={game.background_image}
+            background_image={game.gameImage}
             slug={game.slug.current}
-            genre={game.genre}
+            mygenres={game.mygenre}
+            gameImage={game.gameImage}
+            isMyGames={true}
+            className={isDashboard ? "GameCardDash" : "MyGames"}
           />
-        </div>
-      ))}
-    </div>
+        ))}
+      </section>
+    </>
   );
 };
 

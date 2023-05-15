@@ -42,38 +42,37 @@ function App() {
       : [],
       publishers: gamesDetails[index].publishers,
       developers: gamesDetails[index].developers,
-    /*Fikk fra stackoverflow, hvordan man merger to arrays, 
+    /*Fikk fra stackoverflow, hvordan man merger to arrays, gjorde for å sette all data inn i variabelen gamesDataWithDetails 
     https://stackoverflow.com/questions/55607431/how-to-merge-two-array-of-objects-with-reactjs*/
     }));
 
     setGames(gamesDataWithDetails);
-    console.log(gamesDataWithDetails);
   };
 
   useEffect(() => {
     fetchGameData();
   }, []);
 
-  /*Favouritefunksjonalitet*/
-
+  /*Favorittfunksjon med useState*/
   const [favourites, setFavourites] = useState([]);
   
   function addToFavourites(game) {
   if (favourites.some(favGame => favGame.id === game.id)) {
-    setFavourites(prev => prev.filter(favGame => favGame.id !== game.id));
-  } else {
-    setFavourites(prev => [...prev, game]);
+      setFavourites(prev => prev.filter(favGame => favGame.id !== game.id));
+    } else {
+      setFavourites(prev => [...prev, game]);
+    }
   }
-}
   
+  /*Loginfunksjon*/
   const [email, setEmail] = useState('')
   const [user, setUser] = useState(null)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  /*I mitt hue syntes jeg at det blir enklere å bruke en funksjon i onClick for å registrere at brukeren er på*/
-  };
+const handleLogin = () => {
+  setIsLoggedIn(true);
+  setUser(JSON.parse(localStorage.getItem('user')));
+};
 
   return (
     <Routes>
@@ -87,6 +86,7 @@ function App() {
             setEmail={setEmail}
             setUser={setUser}
             user={user}
+            isLoggedIn={isLoggedIn}
             />
           )
         }
@@ -95,7 +95,7 @@ function App() {
       <Route path="/gameshop" element={<GameShop games={games} />} />
       <Route path="/games/:slug" element={<GamePage games={games} addToFavourites={addToFavourites} />} />
       <Route path="/mygames" element={<MyGames />} />
-      <Route path="/mygames/:slug" element={<GamePage/>} />
+      <Route path="/mygames/:slug" element={<GamePage addToFavourites={addToFavourites} />} />
       <Route path="/myfavourites" element={<MyFavourites favourites={favourites} />} />
       </Route>
     </Routes>

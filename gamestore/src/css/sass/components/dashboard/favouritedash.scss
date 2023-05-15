@@ -1,0 +1,92 @@
+#MyFavTitle {
+  color: black;
+  text-align: center;
+  margin-top: 3.5rem;
+  font-size: 18px;
+  padding: 0.5rem 0.5rem;
+  background-color: #E983D8;
+  border-radius: 4px;
+
+  &:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  }
+}
+
+#FavCardDash h3, a {
+  color:black;
+  text-decoration: none;
+
+}
+
+#FavCardDash img {
+  
+  @media (min-width: 350px) {
+    height: 120px;
+    width: 300px;
+  }
+
+  @media (min-width: 510px) {
+    height: 150px;
+    width: 325px;
+  }
+
+  @media (min-width: 768px) {
+    height: 200px;
+    width: 400px;
+  }
+
+  @media (min-width: 992px) {
+    height: 200px;
+    width: 300px;
+  }
+
+  @media (min-width: 1051px) {
+    height: 200px;
+    width: 320px;
+  }
+}
+
+#FavCardDash {
+  display:flex;
+  flex-grow: 1;
+  margin-top: 70px;
+
+  @media (min-width: 510px) {
+    height: 150px;
+    width: 325px;
+  }
+  
+  @media (min-width: 768px) {
+    width: 400px;
+    gap: 20px;
+  }
+
+  @media (min-width: 992px) {
+      width: 200px;
+      height: 300px;
+      gap: 20px;
+      flex-direction: column;
+  }
+      
+  @media (min-width: 1051px) {
+      height: 300px;
+      gap: 20px;
+      width: 270px;
+      flex-direction: column;
+  }
+}
+
+#FavButton {
+  background-color: yellow;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+
+&:hover {
+  opacity: 0.7;
+}
+}

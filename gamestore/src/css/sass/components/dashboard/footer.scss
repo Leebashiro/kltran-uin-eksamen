@@ -1,0 +1,22 @@
+#Footer {
+    background-color: black;
+    height:125px;
+    border-top: 5px black;
+    width: 100%;
+    position: absolute;
+    bottom: 0px; left: 0;
+}
+
+#Footer a{
+    margin: 2 0;
+    border-bottom: solid 1px;
+}
+
+#Footer a:hover {
+    color: blue !important;
+}
+
+#Footer a, p {
+    letter-spacing: 0.5px;
+    color: white;
+  }

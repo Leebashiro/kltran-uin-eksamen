@@ -4,8 +4,8 @@ export const fetchAllGames = async () => {
   const data = await client.fetch(`*[_type == "mygames"] {
     API_id,
     game_title,
-    genre,
-    "background_image": game_image.asset->url,
+    mygenre,
+    "gameImage": game_image.asset->url,
     slug
   }`);
   return data;
@@ -16,11 +16,14 @@ export const fetchGame = async (slug) => {
     *[_type == "mygames" && slug.current == $slug] {
       API_id,
       game_title,
-      genre,
+      mygenre,
       hours_played,
-      "background_image": game_image.asset->url
+      "gameImage": game_image.asset->url
     }`, {slug});
   return data;
 };
 
-
+export const fetchCount = async () => {
+  const data = await client.fetch(`count(*[_type == "mygames"])`);
+  return data;
+};

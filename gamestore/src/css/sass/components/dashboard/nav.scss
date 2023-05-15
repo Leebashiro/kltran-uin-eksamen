@@ -1,0 +1,116 @@
+html {
+    background-color:#36454F;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 180px;
+    margin-top: 130px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: black;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
+    @media (min-width: 350px) {
+            padding: 15px 20px;
+      }
+}
+
+.dashboard h1 {
+    margin-right: auto;
+    color: white;
+}
+    
+.dashboard ul li {
+    font-size: 20px;
+    display: inline-block;
+    color: white;
+    padding-right: 25px;
+    text-decoration: none;
+}
+
+.dashboard a {
+    text-decoration: none;
+    color: white;
+}
+
+.dashboard a:hover {
+    color:blue;
+}
+
+.nav-button {
+    display: none;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+  
+.nav-menu li {
+  margin: 10px 0;
+}
+  
+.nav-menu  li a {
+  color: white;
+  text-decoration: none;   
+  font-size: 20px;
+}
+
+@media (max-width: 630px) {
+    .nav-button {
+    background-color: transparent;  
+    color:green;
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    right: 45px;
+    font-size: 20px;
+    z-index: 999;
+    /*https://blog.logrocket.com/create-responsive-navbar-react-css/*/
+}
+    
+.nav-menu.expanded {
+    background-color: black;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+}
+
+.nav-menu ul {
+    display:none;
+}
+
+.nav-menu.expanded ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.nav-menu li {
+    margin: 10px 0;
+}
+    
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+}

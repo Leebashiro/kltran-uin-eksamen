@@ -1,14 +1,32 @@
 *{
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-@import 'components/dashboard.scss';
+@import 'components/dashboard/nav.scss';
 
 @import 'components/gamecard.scss';
 
-@import 'components/gameshopdash.scss';
+@import 'components/dashboard/shopdash.scss';
 
-@import 'components/gamedetails.scss';
+@import 'components/dashboard/mygamesdash.scss';
 
-@import 'components/mygamesdash.scss';
+@import 'components/frontpage.scss';
+
+@import 'components/responsive.scss';
+
+@import 'components/dashboard/footer.scss';
+
+@import 'components/gameshop.scss';
+
+@import 'components/dashboard/line.scss';
+
+@import 'components/dashboard/favouritedash.scss';
+
+@import 'components/gamepage.scss';
+
+@import 'components/mygames.scss';
+
+@import 'components/login.scss';
+
+@import 'components/myfavourite.scss';

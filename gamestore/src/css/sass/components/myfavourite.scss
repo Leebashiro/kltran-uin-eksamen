@@ -1,0 +1,14 @@
+#MyFavourites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0 3rem;
+}
+
+#MyFavourites img {
+    width: 300px;
+}
+
+#MyFavourites {
+  text-decoration: none;
+}

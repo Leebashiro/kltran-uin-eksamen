@@ -1,0 +1,47 @@
+@import './responsive.scss';
+
+.FrontDisplay {
+    display: grid;
+ 
+   @include xs-breakpoint{
+        grid-template-areas: "Shop Shop"
+                             "Game Game"
+                             "Fav Fav";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @include sm-breakpoint{
+        grid-template-areas: "Shop Shop Shop"
+                            "Game Game Game"
+                             "Fav Fav Fav";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    @include md-breakpoint{
+        grid-template-areas: "Shop Shop Shop"
+                            "Game Game Game"
+                             "Fav Fav Fav";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @include lg-breakpoint {
+        grid-template-areas: "Shop Shop Line Fav"
+                            "Game Game Line Fav";
+        grid-template-columns: 1.6fr 1.6fr 0.1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+#ShopFront {
+    grid-area: Shop;
+  }
+
+#GamesFront {
+    grid-area: Game;
+}
+
+#FavFront {
+    grid-area: Fav;
+}
