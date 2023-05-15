@@ -1,5 +1,7 @@
+import MyGames from "../MyGames";
+
 export default function MyGamesDash () {
-    return (
-        
-    )
+  return (
+    <MyGames limit={3}/> 
+  )
 }
